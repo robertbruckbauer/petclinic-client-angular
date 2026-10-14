@@ -1,0 +1,6 @@
+= AI-driven development and maintenance
+
+== Bootstrap operation
+
+This section describes the steps required to bootstrap the AI-driven development and maintenance environment for this repository.
+

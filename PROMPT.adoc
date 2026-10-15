@@ -4,3 +4,6 @@
 
 This section describes the steps required to bootstrap the AI-driven development and maintenance environment for this repository.
 
+----
+Create an implementation plan plans/skaffold.plan.md that skaffolds this repository to fulfil the openspec requirements.
+----

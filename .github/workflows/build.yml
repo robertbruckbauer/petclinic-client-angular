@@ -2,7 +2,7 @@
 name: build
 
 # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#on
-on: 
+on:
   # run on push to the default branch and tags
   push:
     branches:
@@ -33,8 +33,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
       # https://github.com/actions/checkout
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
+
+      # https://github.com/actions/setup-node
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test -- --watch=false
+      - run: npm run build
+      - run: docker build .

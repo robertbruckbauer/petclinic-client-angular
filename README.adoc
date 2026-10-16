@@ -1,1 +1,14 @@
 = Browser-based angular client
+
+== Development
+
+Run `npm start` to serve the application on http://localhost:4200.
+Run `npm run lint` to check the formatting with Prettier.
+Run `npm run format` to format all files with Prettier.
+Run `npm test` to run the unit tests with Vitest.
+Run `npm run build` to create the production build in `dist/`.
+
+== Container
+
+Run `docker build -t petclinic-client-angular .` to build the nginx image.
+Run `docker run -p 8080:80 petclinic-client-angular` to serve the application on http://localhost:8080.

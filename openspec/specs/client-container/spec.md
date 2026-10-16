@@ -45,3 +45,23 @@ nginx SHALL serve the static files and SHALL fall back to `index.html` for route
 - **GIVEN** the nginx container is running
 - **WHEN** `/healthz` is requested
 - **THEN** it returns `200` with an empty body regardless of whether the backend is reachable
+
+### Requirement: Container runs as a non-root user
+
+The runtime stage SHALL run nginx as a non-root user and SHALL NOT run any process as `root`.
+nginx SHALL listen on an unprivileged port (above 1023) and SHALL only write to paths that this user owns.
+
+#### Scenario: Image declares a non-root user
+
+- **WHEN** the container image configuration is inspected
+- **THEN** its default user is not `root` and not UID `0`
+
+#### Scenario: Container processes do not run as root
+
+- **WHEN** a container is started from the image
+- **THEN** the nginx master and worker processes run as a non-root user
+
+#### Scenario: Container serves the application without privileges
+
+- **WHEN** a container is started from the image with all Linux capabilities dropped
+- **THEN** nginx serves the application on its unprivileged port

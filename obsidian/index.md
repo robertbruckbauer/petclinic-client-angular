@@ -9,7 +9,7 @@ related:
   - security/moc.md
   - testing/moc.md
 status: current
-updated: 2026-10-14
+updated: 2026-10-16
 ---
 
 # Obsidian knowledge graph — vault index

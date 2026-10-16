@@ -65,3 +65,19 @@ nginx SHALL listen on an unprivileged port (above 1023) and SHALL only write to 
 
 - **WHEN** a container is started from the image with all Linux capabilities dropped
 - **THEN** nginx serves the application on its unprivileged port
+
+### Requirement: Base images are pinned by digest
+
+Every `FROM` instruction in the `Dockerfile` SHALL reference its base image by an immutable digest (`@sha256:...`).
+The human-readable tag MAY be kept next to the digest for readability, but the digest SHALL determine the image that is used.
+Base image digests SHALL be updated deliberately, never implicitly by a moving tag.
+
+#### Scenario: Every base image has a digest
+
+- **WHEN** the `Dockerfile` of the client is inspected
+- **THEN** each `FROM` instruction references its base image with a `@sha256:` digest
+
+#### Scenario: Rebuilds use the same base images
+
+- **WHEN** the image is built twice while the upstream tags have moved to newer images
+- **THEN** both builds use the base images identified by the pinned digests

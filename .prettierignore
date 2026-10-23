@@ -1,0 +1,12 @@
+node_modules
+dist
+.angular
+openspec
+obsidian
+plans
+pages
+package-lock.json
+.agents
+.github
+AGENTS.md
+*.md

@@ -2,7 +2,7 @@
 name: obsidian-maintainer
 description: 'Maintain obsidian directory as the knowledge base by editing knowledge notes in categories; use for prompts like "Add knowledge about ..." or "Update knowledge explaining ...".'
 ---
-description: 'Maintain openspec directory as the normative behavior contract by editing capability specs directly; use for prompts like "Add a requirement for ..." or "Update the capability for ...".'
+
 ## Task preconditions
 
 You MUST NOT generate or edit a note if even one of the preconditions is not met.

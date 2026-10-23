@@ -1,0 +1,13 @@
+# https://docs.github.com/get-started/getting-started-with-git/ignoring-files
+/dist
+/node_modules
+/tmp
+.idea/
+.project
+.classpath
+.c9/
+.vscode/
+.settings/
+.history/*
+.angular/*
+*.launch
